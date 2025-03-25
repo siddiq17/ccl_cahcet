@@ -2,74 +2,38 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { libraryData } from "@/data/library-data"
+import { undergraduateSyllabi, postgraduateSyllabi, Department } from "@/data/syllabi-data"
 import { Button } from "@/components/ui/button"
-import { FileDown, Search, Filter, BookOpen, GraduationCap, Calendar } from "lucide-react"
+import { FileDown, Search, Filter, BookOpen, GraduationCap } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
 import { motion, AnimatePresence } from "framer-motion"
 import { toast } from "@/components/ui/use-toast"
-import { ScrollArea } from "@/components/ui/scroll-area"
 
 export default function SyllabiPage() {
-  const [selectedLevel, setSelectedLevel] = useState("undergraduate")
+  const [selectedLevel, setSelectedLevel] = useState<"undergraduate" | "postgraduate">("undergraduate")
   const [selectedDepartment, setSelectedDepartment] = useState("")
   const [selectedYear, setSelectedYear] = useState("")
-  const [selectedSemester, setSelectedSemester] = useState("")
   const [searchQuery, setSearchQuery] = useState("")
 
-  const handleDownload = (course: any) => {
+  const handleDownload = (pdfLink: string, departmentName: string) => {
     toast({
       title: "Syllabus Downloaded",
-      description: `${course.code}: ${course.name} syllabus has been downloaded.`,
+      description: `${departmentName} syllabus has been downloaded.`,
     })
-    // In a real application, this would redirect to the PDF file
-    window.open(course.pdfLink, "_blank")
+    window.open(pdfLink, "_blank")
   }
 
-  const filteredDepartments = libraryData.syllabi[selectedLevel as keyof typeof libraryData.syllabi].filter(
-    (dept) => !searchQuery || dept.name.toLowerCase().includes(searchQuery.toLowerCase()),
+  const syllabi = selectedLevel === "undergraduate" ? undergraduateSyllabi : postgraduateSyllabi
+
+  const filteredDepartments = syllabi.filter(
+    (dept) => !searchQuery || dept.department.toLowerCase().includes(searchQuery.toLowerCase())
   )
-
-  const getYears = (departmentName: string) => {
-    const department = libraryData.syllabi[selectedLevel as keyof typeof libraryData.syllabi].find(
-      (dept) => dept.name === departmentName,
-    )
-
-    return department ? department.years : []
-  }
-
-  const getSemesters = (departmentName: string, year: string) => {
-    const department = libraryData.syllabi[selectedLevel as keyof typeof libraryData.syllabi].find(
-      (dept) => dept.name === departmentName,
-    )
-
-    if (!department) return []
-
-    const yearData = department.years.find((y) => y.year === year)
-    return yearData ? yearData.semesters : []
-  }
-
-  const getCourses = (departmentName: string, year: string, semester: string) => {
-    const department = libraryData.syllabi[selectedLevel as keyof typeof libraryData.syllabi].find(
-      (dept) => dept.name === departmentName,
-    )
-
-    if (!department) return []
-
-    const yearData = department.years.find((y) => y.year === year)
-    if (!yearData) return []
-
-    const semesterData = yearData.semesters.find((s) => s.name === semester)
-    return semesterData ? semesterData.courses : []
-  }
 
   const resetFilters = () => {
     setSelectedDepartment("")
     setSelectedYear("")
-    setSelectedSemester("")
     setSearchQuery("")
   }
 
@@ -110,7 +74,7 @@ export default function SyllabiPage() {
             <Search className={`h-5 w-5 ${selectedLevel === "undergraduate" ? "text-teal-500" : "text-violet-500"}`} />
             <CardTitle>Find Syllabi</CardTitle>
           </div>
-          <CardDescription>Search and filter course syllabi by department, year, and semester</CardDescription>
+          <CardDescription>Search and filter course syllabi by department and year</CardDescription>
         </CardHeader>
         <CardContent className="p-6">
           <div className="grid gap-4 md:grid-cols-2">
@@ -119,7 +83,7 @@ export default function SyllabiPage() {
               <div className="relative">
                 <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                 <Input
-                  placeholder="Search departments or courses..."
+                  placeholder="Search departments..."
                   className="pl-8"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -136,7 +100,7 @@ export default function SyllabiPage() {
         </CardContent>
       </Card>
 
-      <Tabs defaultValue="undergraduate" value={selectedLevel} onValueChange={setSelectedLevel} className="w-full">
+      <Tabs defaultValue="undergraduate" value={selectedLevel} onValueChange={setSelectedLevel as (value: string) => void} className="w-full">
         <TabsList className="grid w-full grid-cols-2 mb-8">
           <TabsTrigger value="undergraduate" className={colorTheme.tab}>
             <GraduationCap className="mr-2 h-4 w-4" />
@@ -161,14 +125,14 @@ export default function SyllabiPage() {
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {filteredDepartments.map((department, index) => (
                   <motion.div
-                    key={department.name}
+                    key={department.department}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1, duration: 0.3 }}
                     className="w-full"
                   >
                     <Card
-                      className={`h-full overflow-hidden transition-all duration-300 hover:shadow-lg border-none shadow-md ${selectedDepartment === department.name ? "ring-2 ring-primary" : ""}`}
+                      className={`h-full overflow-hidden transition-all duration-300 hover:shadow-lg border-none shadow-md ${selectedDepartment === department.department ? "ring-2 ring-primary" : ""}`}
                     >
                       <CardHeader className={`bg-gradient-to-r ${colorTheme.bg} pb-3`}>
                         <CardTitle className="flex items-center gap-2 text-lg">
@@ -179,27 +143,25 @@ export default function SyllabiPage() {
                               <GraduationCap className="h-4 w-4" />
                             )}
                           </div>
-                          {department.name}
+                          {department.department}
                         </CardTitle>
-                        <CardDescription>{department.description}</CardDescription>
                       </CardHeader>
                       <CardContent className="p-4">
                         <div className="space-y-4">
                           <div>
                             <label className="text-sm font-medium">Select Year</label>
                             <Select
-                              value={selectedDepartment === department.name ? selectedYear : ""}
+                              value={selectedDepartment === department.department ? selectedYear : ""}
                               onValueChange={(value) => {
-                                setSelectedDepartment(department.name)
+                                setSelectedDepartment(department.department)
                                 setSelectedYear(value)
-                                setSelectedSemester("")
                               }}
                             >
                               <SelectTrigger className="mt-1.5">
                                 <SelectValue placeholder="Choose year" />
                               </SelectTrigger>
                               <SelectContent>
-                                {department.years.map((year) => (
+                                {department.academicYears.map((year) => (
                                   <SelectItem key={year.year} value={year.year}>
                                     {year.year}
                                   </SelectItem>
@@ -208,70 +170,25 @@ export default function SyllabiPage() {
                             </Select>
                           </div>
 
-                          {selectedDepartment === department.name && selectedYear && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              transition={{ duration: 0.3 }}
-                            >
-                              <label className="text-sm font-medium">Select Semester</label>
-                              <Select value={selectedSemester} onValueChange={setSelectedSemester}>
-                                <SelectTrigger className="mt-1.5">
-                                  <SelectValue placeholder="Choose semester" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                  {getSemesters(department.name, selectedYear).map((semester) => (
-                                    <SelectItem key={semester.name} value={semester.name}>
-                                      {semester.name}
-                                    </SelectItem>
-                                  ))}
-                                </SelectContent>
-                              </Select>
-                            </motion.div>
-                          )}
-
-                          {selectedDepartment === department.name && selectedYear && selectedSemester && (
+                          {selectedDepartment === department.department && selectedYear && (
                             <motion.div
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
                               transition={{ duration: 0.3 }}
-                              className="mt-4"
+                              className="mt-4 text-center"
                             >
-                              <h3 className="font-medium text-sm flex items-center gap-2 mb-3">
-                                <Calendar className="h-4 w-4 text-muted-foreground" />
-                                Available Courses
-                              </h3>
-                              <ScrollArea className="h-[200px] pr-4">
-                                <div className="space-y-3">
-                                  {getCourses(department.name, selectedYear, selectedSemester).map((course) => (
-                                    <div
-                                      key={course.code}
-                                      className="flex items-center justify-between rounded-md border p-3 transition-colors hover:bg-muted/50"
-                                    >
-                                      <div>
-                                        <div className="flex items-center gap-2">
-                                          <Badge variant="outline" className={colorTheme.badge}>
-                                            {course.code}
-                                          </Badge>
-                                          <h4 className="font-medium text-sm">{course.name}</h4>
-                                        </div>
-                                        <p className="text-xs text-muted-foreground mt-1">
-                                          Credits: {course.credits} • {course.type}
-                                        </p>
-                                      </div>
-                                      <Button
-                                        variant="outline"
-                                        size="sm"
-                                        onClick={() => handleDownload(course)}
-                                        className="shrink-0 ml-2"
-                                      >
-                                        <FileDown className="mr-2 h-4 w-4" />
-                                        Syllabus
-                                      </Button>
-                                    </div>
-                                  ))}
-                                </div>
-                              </ScrollArea>
+                              <Button
+                                onClick={() => {
+                                  const selectedYearData = department.academicYears.find(y => y.year === selectedYear)
+                                  if (selectedYearData) {
+                                    handleDownload(selectedYearData.pdfLink, department.department)
+                                  }
+                                }}
+                                className="w-full"
+                              >
+                                <FileDown className="mr-2 h-4 w-4" />
+                                Download {department.department} Syllabus
+                              </Button>
                             </motion.div>
                           )}
                         </div>
@@ -295,17 +212,12 @@ export default function SyllabiPage() {
             <li>Select your program level (Undergraduate or Postgraduate)</li>
             <li>Choose your department from the available options</li>
             <li>Select the academic year of study</li>
-            <li>Choose the semester for which you need the syllabus</li>
-            <li>Click the "Syllabus" button next to the desired course</li>
+            <li>Click the "Download" button for the department syllabus</li>
             <li>The PDF will open in a new tab or download automatically</li>
             <li>For any issues accessing syllabi, contact the library staff</li>
           </ol>
           <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-950/50 rounded-lg">
-            <h3 className="font-medium flex items-center gap-2">
-              <Calendar className="h-4 w-4 text-amber-500" />
-              Important Dates
-            </h3>
-            <p className="mt-2 text-sm">
+            <p className="text-sm">
               New syllabi for the upcoming academic year will be available by July 15th. Please check back for updates.
             </p>
           </div>
@@ -314,4 +226,3 @@ export default function SyllabiPage() {
     </div>
   )
 }
-

@@ -20,7 +20,7 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <Image
-              src="/placeholder.svg?height=400&width=800"
+              src="/library-top.png"
               alt="Library Building"
               width={800}
               height={400}
@@ -31,22 +31,24 @@ export default function AboutPage() {
         </Card>
 
         <Card>
-          <CardHeader>
-            <CardTitle>Our Mission</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>{libraryData.about.mission}</p>
-          </CardContent>
-        </Card>
+  <CardHeader>
+    <CardTitle>Functions/ Activities Of Library Committee</CardTitle>
+  </CardHeader>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Our Vision</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>{libraryData.about.vision}</p>
-          </CardContent>
-        </Card>
+  <CardContent>
+    <ul className="list-disc pl-7 space-y-2">
+      {libraryData?.about?.activities?.length > 0 ? (
+        libraryData.about.activities.map((rule, index) => (
+          <li key={index}>{rule}</li>
+        ))
+      ) : (
+        <li>No activities found</li>
+      )}
+    </ul>
+  </CardContent>
+</Card>
+
+       
       </div>
 
       <Card>
@@ -58,7 +60,7 @@ export default function AboutPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {libraryData.about.staff.map((person, index) => (
               <div key={index} className="flex flex-col items-center text-center">
-                <div className="relative h-40 w-40 overflow-hidden rounded-full">
+                {/* <div className="relative h-40 w-40 overflow-hidden rounded-full">
                   <Image
                     src="/placeholder.svg?height=160&width=160"
                     alt={person.name}
@@ -66,7 +68,7 @@ export default function AboutPage() {
                     height={160}
                     className="object-cover"
                   />
-                </div>
+                </div> */}
                 <h3 className="mt-4 text-lg font-medium">{person.name}</h3>
                 <p className="text-sm text-muted-foreground">{person.position}</p>
               </div>

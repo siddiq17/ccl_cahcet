@@ -15,6 +15,7 @@ import {
   BookMarked,
   ScrollText,
   Newspaper,
+  Contact,
 } from "lucide-react"
 
 // Site Information
@@ -89,6 +90,11 @@ export const libraryData = {
         icon: Newspaper,
         href: "/journals",
       },
+      {
+        title: "Contact Us",
+        icon: Contact,
+        href: "/contact",
+      },
     ],
   },
 
@@ -140,19 +146,26 @@ export const libraryData = {
   // ===================================================
   // Information about the library
   about: {
-    history:
+    history: 
+    [
       "Established in 1985, our college library has grown from a small collection of 5,000 books to a comprehensive resource center with over 25,000 books, 500 journals, and 10,000 e-books. The library building was renovated in 2010 to include modern facilities such as computer labs, discussion rooms, and multimedia resources. Over the years, we have continuously evolved to meet the changing needs of our academic community, embracing digital technologies while maintaining our commitment to traditional library services.",
-    mission:
-      "Our mission is to support the educational and research needs of our college community by providing access to diverse information resources, fostering information literacy, and creating an environment conducive to learning and knowledge creation.",
-    vision:
-      "To be a leading academic library that empowers users with knowledge and information, fostering intellectual growth, critical thinking, and lifelong learning.",
+  ],
+    activities:[
+      "Formulate the policy, rules, and regulations for the Library.",
+      "Supervise and approval for Library Budget and allocation of funds under different expenditure heads.",
+      "To advise the Librarian for development proposals.",
+      "To take strategic decisions regarding acquisition of Library reading material/ resources.",
+      "Make necessary provision for Library building, furniture, equipment, reading material and staff, etc. in the Library.",
+      "To ensure good governance of the Library.",
+      "Library committee metting will be held every three month (Starting and Mid of semester).",
+    ],
+      
+    
     staff: [
-      { name: "Dr. Sarah Johnson", position: "Chief Librarian" },
-      { name: "Mr. Robert Chen", position: "Assistant Librarian" },
-      { name: "Ms. Emily Rodriguez", position: "Technical Services Librarian" },
-      { name: "Mr. David Kim", position: "Digital Resources Specialist" },
-      { name: "Ms. Priya Patel", position: "Circulation Supervisor" },
-      { name: "Mr. James Wilson", position: "Reference Librarian" },
+      { name: "Principal", position: "President" },
+      { name: "Librarian", position: "Secretary" },
+      { name: "All Hod’s of Department", position: "Members" },
+      { name: "Student Representatives", position: "04 Members" },
     ],
     facilities: [
       {
@@ -189,619 +202,98 @@ export const libraryData = {
   // Library rules
   rules: {
     general: [
-      "Library cards are mandatory for entry and borrowing books.",
-      "Maintain silence in the library premises.",
-      "Mobile phones must be kept on silent mode.",
-      "Food and beverages are not allowed inside the library.",
-      "Personal belongings should be kept at the property counter.",
-      "Library materials must be handled with care.",
-      "Users are responsible for any damage to library materials.",
-      "Library staff should be treated with respect.",
+      "All the Student and Staff are member of Library.",
+      "Students should examine the books thoroughly on receiving them for any damage and report to Librarian if any such damage is found, otherwise they will be held responsible for the same.",
+      "Silence must be Strictly observed inside the Library.",
+      "Members should leave their belongiongs at the entrance before entering the library.",
+      "In case of loss of a student ID Card, they have to inform immediately to the Librarian and a written request must be made to the principal for the issue of a duplicate ID Card.",
     ],
-    borrowing: [
-      "Undergraduate students can borrow up to 3 books for 14 days.",
-      "Postgraduate students can borrow up to 5 books for 21 days.",
-      "Faculty members can borrow up to 10 books for 30 days.",
-      "Reference books, rare books, and periodicals cannot be borrowed.",
-      "Books can be renewed once if there is no reservation for them.",
-      "Borrowed items must be returned on or before the due date.",
-      "A valid ID card must be presented when borrowing materials.",
-      "Books on high demand may have restricted loan periods.",
-    ],
-    computerUsage: [
-      "Computer usage is limited to academic purposes only.",
-      "Users must log out after completing their session.",
-      "Downloading unauthorized software is prohibited.",
-      "Viewing inappropriate content is strictly forbidden.",
-      "Computer sessions are limited to 2 hours during peak times.",
-      "Save your work regularly as computers are reset daily.",
-      "Report any technical issues to the library staff.",
-      "Do not attempt to modify computer settings.",
-    ],
-    fines: [
-      {
-        violation: "Overdue Books",
-        penalty: "$0.50 per day per book up to a maximum of the book's value.",
-      },
-      {
-        violation: "Damaged Books",
-        penalty: "Cost of repair or replacement plus a processing fee of $10.",
-      },
-      {
-        violation: "Lost Books",
-        penalty: "Replacement cost plus a processing fee of $15.",
-      },
-      {
-        violation: "Violation of Computer Usage Policy",
-        penalty: "Suspension of library privileges for up to 30 days.",
-      },
-      {
-        violation: "Disturbance in Library",
-        penalty: "Warning for first offense, temporary suspension for repeated offenses.",
-      },
-    ],
-  },
 
-  // Syllabi
-  // ===================================================
-  // Course syllabi organized by department, year, and semester
-  syllabi: {
-    undergraduate: [
-      {
-        name: "Department of Computer Science",
-        description: "Courses in programming, algorithms, databases, and more",
-        years: [
-          {
-            year: "2023-2024",
-            semesters: [
-              {
-                name: "Fall Semester",
-                courses: [
-                  {
-                    code: "CS101",
-                    name: "Introduction to Programming",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#cs101-fall-2023",
-                  },
-                  {
-                    code: "CS102",
-                    name: "Data Structures",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#cs102-fall-2023",
-                  },
-                ],
-              },
-              {
-                name: "Spring Semester",
-                courses: [
-                  {
-                    code: "CS201",
-                    name: "Database Management Systems",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#cs201-spring-2024",
-                  },
-                  {
-                    code: "CS202",
-                    name: "Computer Networks",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#cs202-spring-2024",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            year: "2022-2023",
-            semesters: [
-              {
-                name: "Fall Semester",
-                courses: [
-                  {
-                    code: "CS101",
-                    name: "Introduction to Programming",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#cs101-fall-2022",
-                  },
-                  {
-                    code: "CS102",
-                    name: "Data Structures",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#cs102-fall-2022",
-                  },
-                ],
-              },
-              {
-                name: "Spring Semester",
-                courses: [
-                  {
-                    code: "CS201",
-                    name: "Database Management Systems",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#cs201-spring-2023",
-                  },
-                  {
-                    code: "CS202",
-                    name: "Computer Networks",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#cs202-spring-2023",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        name: "Department of Business Administration",
-        description: "Courses in management, finance, marketing, and more",
-        years: [
-          {
-            year: "2023-2024",
-            semesters: [
-              {
-                name: "Fall Semester",
-                courses: [
-                  {
-                    code: "BA101",
-                    name: "Principles of Management",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#ba101-fall-2023",
-                  },
-                  {
-                    code: "BA102",
-                    name: "Financial Accounting",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#ba102-fall-2023",
-                  },
-                ],
-              },
-              {
-                name: "Spring Semester",
-                courses: [
-                  {
-                    code: "BA201",
-                    name: "Marketing Management",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#ba201-spring-2024",
-                  },
-                  {
-                    code: "BA202",
-                    name: "Human Resource Management",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#ba202-spring-2024",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            year: "2022-2023",
-            semesters: [
-              {
-                name: "Fall Semester",
-                courses: [
-                  {
-                    code: "BA101",
-                    name: "Principles of Management",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#ba101-fall-2022",
-                  },
-                  {
-                    code: "BA102",
-                    name: "Financial Accounting",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#ba102-fall-2022",
-                  },
-                ],
-              },
-              {
-                name: "Spring Semester",
-                courses: [
-                  {
-                    code: "BA201",
-                    name: "Marketing Management",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#ba201-spring-2023",
-                  },
-                  {
-                    code: "BA202",
-                    name: "Human Resource Management",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#ba202-spring-2023",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        name: "Department of English",
-        description: "Courses in literature, writing, linguistics, and more",
-        years: [
-          {
-            year: "2023-2024",
-            semesters: [
-              {
-                name: "Fall Semester",
-                courses: [
-                  {
-                    code: "ENG101",
-                    name: "English Literature",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#eng101-fall-2023",
-                  },
-                  {
-                    code: "ENG102",
-                    name: "Creative Writing",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#eng102-fall-2023",
-                  },
-                ],
-              },
-              {
-                name: "Spring Semester",
-                courses: [
-                  {
-                    code: "ENG201",
-                    name: "American Literature",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#eng201-spring-2024",
-                  },
-                  {
-                    code: "ENG202",
-                    name: "Literary Criticism",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#eng202-spring-2024",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            year: "2022-2023",
-            semesters: [
-              {
-                name: "Fall Semester",
-                courses: [
-                  {
-                    code: "ENG101",
-                    name: "English Literature",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#eng101-fall-2022",
-                  },
-                  {
-                    code: "ENG102",
-                    name: "Creative Writing",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#eng102-fall-2022",
-                  },
-                ],
-              },
-              {
-                name: "Spring Semester",
-                courses: [
-                  {
-                    code: "ENG201",
-                    name: "American Literature",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#eng201-spring-2023",
-                  },
-                  {
-                    code: "ENG202",
-                    name: "Literary Criticism",
-                    credits: 3,
-                    type: "Core",
-                    pdfLink: "#eng202-spring-2023",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
+    circulationpolicy: [
+      <table>
+      <thead>
+          <tr>
+              <th>Category</th>
+              <th>No. of Books Issue</th>
+              <th>Duration</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Research Scholars</td>
+              <td>09</td>
+              <td>06 Months (Renewal after 03 Months)</td>
+          </tr>
+          <tr>
+              <td>Teaching Staffs</td>
+              <td>09</td>
+              <td>06 Months (Renewal after 03 Months)</td>
+          </tr>
+          <tr>
+              <td>Non-Teaching</td>
+              <td>03</td>
+              <td>03 Months (Renewal after 45 days)</td>
+          </tr>
+          <tr>
+              <td>Lab Assistant</td>
+              <td>03</td>
+              <td>03 Months (Renewal after 45 days)</td>
+          </tr>
+          <tr>
+              <td>Under Graduate Students</td>
+              <td>06</td>
+              <td>01 Month (Renewal after 15 days)</td>
+          </tr>
+          <tr>
+              <td>Post Graduate Students</td>
+              <td>06</td>
+              <td>01 Month (Renewal after 15 days)</td>
+          </tr>
+      </tbody>
+  </table>
     ],
-    postgraduate: [
-      {
-        name: "Department of Computer Science",
-        description: "Advanced courses in computing, AI, and software engineering",
-        years: [
-          {
-            year: "2023-2024",
-            semesters: [
-              {
-                name: "Fall Semester",
-                courses: [
-                  {
-                    code: "CS501",
-                    name: "Advanced Algorithms",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#cs501-fall-2023",
-                  },
-                  {
-                    code: "CS502",
-                    name: "Machine Learning",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#cs502-fall-2023",
-                  },
-                ],
-              },
-              {
-                name: "Spring Semester",
-                courses: [
-                  {
-                    code: "CS601",
-                    name: "Artificial Intelligence",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#cs601-spring-2024",
-                  },
-                  {
-                    code: "CS602",
-                    name: "Cloud Computing",
-                    credits: 4,
-                    type: "Elective",
-                    pdfLink: "#cs602-spring-2024",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            year: "2022-2023",
-            semesters: [
-              {
-                name: "Fall Semester",
-                courses: [
-                  {
-                    code: "CS501",
-                    name: "Advanced Algorithms",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#cs501-fall-2022",
-                  },
-                  {
-                    code: "CS502",
-                    name: "Machine Learning",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#cs502-fall-2022",
-                  },
-                ],
-              },
-              {
-                name: "Spring Semester",
-                courses: [
-                  {
-                    code: "CS601",
-                    name: "Artificial Intelligence",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#cs601-spring-2023",
-                  },
-                  {
-                    code: "CS602",
-                    name: "Cloud Computing",
-                    credits: 4,
-                    type: "Elective",
-                    pdfLink: "#cs602-spring-2023",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        name: "Department of Business Administration",
-        description: "Advanced courses in business strategy and management",
-        years: [
-          {
-            year: "2023-2024",
-            semesters: [
-              {
-                name: "Fall Semester",
-                courses: [
-                  {
-                    code: "MBA501",
-                    name: "Strategic Management",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#mba501-fall-2023",
-                  },
-                  {
-                    code: "MBA502",
-                    name: "Business Analytics",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#mba502-fall-2023",
-                  },
-                ],
-              },
-              {
-                name: "Spring Semester",
-                courses: [
-                  {
-                    code: "MBA601",
-                    name: "International Business",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#mba601-spring-2024",
-                  },
-                  {
-                    code: "MBA602",
-                    name: "Entrepreneurship",
-                    credits: 4,
-                    type: "Elective",
-                    pdfLink: "#mba602-spring-2024",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            year: "2022-2023",
-            semesters: [
-              {
-                name: "Fall Semester",
-                courses: [
-                  {
-                    code: "MBA501",
-                    name: "Strategic Management",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#mba501-fall-2022",
-                  },
-                  {
-                    code: "MBA502",
-                    name: "Business Analytics",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#mba502-fall-2022",
-                  },
-                ],
-              },
-              {
-                name: "Spring Semester",
-                courses: [
-                  {
-                    code: "MBA601",
-                    name: "International Business",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#mba601-spring-2023",
-                  },
-                  {
-                    code: "MBA602",
-                    name: "Entrepreneurship",
-                    credits: 4,
-                    type: "Elective",
-                    pdfLink: "#mba602-spring-2023",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        name: "Department of English",
-        description: "Advanced courses in literature and linguistics",
-        years: [
-          {
-            year: "2023-2024",
-            semesters: [
-              {
-                name: "Fall Semester",
-                courses: [
-                  {
-                    code: "ENG501",
-                    name: "Postcolonial Literature",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#eng501-fall-2023",
-                  },
-                  {
-                    code: "ENG502",
-                    name: "Comparative Literature",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#eng502-fall-2023",
-                  },
-                ],
-              },
-              {
-                name: "Spring Semester",
-                courses: [
-                  {
-                    code: "ENG601",
-                    name: "Modern Poetry",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#eng601-spring-2024",
-                  },
-                  {
-                    code: "ENG602",
-                    name: "Linguistics",
-                    credits: 4,
-                    type: "Elective",
-                    pdfLink: "#eng602-spring-2024",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            year: "2022-2023",
-            semesters: [
-              {
-                name: "Fall Semester",
-                courses: [
-                  {
-                    code: "ENG501",
-                    name: "Postcolonial Literature",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#eng501-fall-2022",
-                  },
-                  {
-                    code: "ENG502",
-                    name: "Comparative Literature",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#eng502-fall-2022",
-                  },
-                ],
-              },
-              {
-                name: "Spring Semester",
-                courses: [
-                  {
-                    code: "ENG601",
-                    name: "Modern Poetry",
-                    credits: 4,
-                    type: "Core",
-                    pdfLink: "#eng601-spring-2023",
-                  },
-                  {
-                    code: "ENG602",
-                    name: "Linguistics",
-                    credits: 4,
-                    type: "Elective",
-                    pdfLink: "#eng602-spring-2023",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
+
+    borrowing: [
+      "Borrowing materials without a valid identity card is prohibited.",
+      "Not permitted to use another user Identity Card.",
+      "Books borrowed from the library are not transferable",
+      "Reference Books are meant for Reading in Library only.",
+      "Journals will not be issued to students at any circumstances.",
+      "The Librarian may recall any book at any time even if the permitted period has not expired.",
+      "The Librarian may refuse to issue books to those who violate these rules.",
+      "Reservation for the books in demand can be done in OPAC to a maximum of (3books) at a time.",
+      "Renewal of books can be done in OPAC.",
     ],
+    finepolicy: [
+      "Books can be retained for a maximum duration of one month with a renewal done at an interval of 15 days.",
+      "Books can be retained for a maximum duration of six month for staffs with a renewal done at an interval of 3 months.",
+      "The Cost of replacement with double amount along with the fine will be charged to the person for loss or damage the library books.",
+      "Fine will be charged as given below if the books are not returned on orbefore the due date this is to ensure that all library Users get a fair chance to access the books.",
+                     "First Week - Rs. 1/- per day.",
+                     "Second Week - Rs. 2/- per day.",
+                     "Third Week - Rs. 10/- per day.",
+    ],
+    
+  bookbank:[
+    "Book Bank facility is available for SC/ST Students and they can borrow six books in their library account for current semester (6 months).",
+  ],
+
+  practice:[
+    "Library User Orientation (Information Literacy Programme).",
+    "Maintenance of Service Areas.",
+    "Access to e-Resources.",
+    "Best Library User Award.",
+    "User Feedback Practice through Suggestion Register.",
+  ],
+
+  generalpolicy:[
+    "Students must take care of Library books and must not deface by underlining, writing or drawing or removing any part of them, or in any other way.",
+    "Silence should be strictly observed in the library.",
+    "Use of cell phones inside the library is prohibited.",
+    "All books, files, notebooks etc. must be presented to the attendant at the checkpoint for inspection before leaving the library. There is no exception to this rule.",
+    "Misbehavior in the library will lead to cancellation of membership and also lead to serious disciplinary action.",
+    "Student should examine the books thoroughlyon receiving them for any damage and report to Librarian if any such damage is found, otherwise they will be held responsible for the same.",
+  ],
   },
 
   // E-Resources
@@ -809,50 +301,21 @@ export const libraryData = {
   // Electronic resources
   eResources: {
     delnet: {
-      ipRange: "192.168.1.1 - 192.168.1.255",
-      url: "https://delnet.in",
+      ipRange: "No IP Range Needed",
+      url: "https://discovery.delnet.in",
       description:
-        "DELNET provides access to a wide range of resources including books, journals, theses, and dissertations.",
+        "DELNET provides access to a wide range of resources including books, journals, theses, and dissertations. Contact the librarian for access instructions.",
     },
     nlist: {
-      ipRange: "192.168.1.1 - 192.168.1.255",
+      ipRange: "No IP Range Needed",
       url: "https://nlist.inflibnet.ac.in",
-      description: "N-LIST provides access to e-journals, e-books, and research databases.",
+      description: "N-LIST provides access to e-journals, e-books, and research databases. Contact the librarian for access instructions.",
     },
-    other: [
-      {
-        name: "IEEE Xplore",
-        description:
-          "Digital library providing access to technical literature in engineering, computer science, and related technologies.",
-        url: "https://ieeexplore.ieee.org",
-      },
-      {
-        name: "ScienceDirect",
-        description: "Platform offering access to a large database of scientific and medical research.",
-        url: "https://www.sciencedirect.com",
-      },
-      {
-        name: "ProQuest",
-        description: "Database of journals, newspapers, reports, dissertations, and other publications.",
-        url: "https://www.proquest.com",
-      },
-      {
-        name: "EBSCO Host",
-        description: "Research platform with full-text databases, subject indexes, and digital collections.",
-        url: "https://www.ebscohost.com",
-      },
-      {
-        name: "Springer Link",
-        description:
-          "Online collection of scientific, technological, and medical journals, books, and reference works.",
-        url: "https://link.springer.com",
-      },
-      {
-        name: "Oxford Academic Journals",
-        description: "Collection of academic and research journals published by Oxford University Press.",
-        url: "https://academic.oup.com/journals",
-      },
-    ],
+    consortium: {
+      ipRange: "No IP Range Needed",
+      url: "https://library.annauniv.edu/auerc/login.php",
+      description: "AUERC provides access to e-journals, e-books, and research databases. Contact the librarian for access instructions.",
+    },
     accessInstructions: [
       "Connect to the college Wi-Fi network or use computers in the library.",
       "For DELNET and N-LIST, access is restricted to the college IP range.",
@@ -867,102 +330,121 @@ export const libraryData = {
   // ===================================================
   // Images of library facilities and events
   gallery: {
-    facilities: [
+    all: [
+      // Facilities
       {
         title: "Main Reading Hall",
         description: "Spacious reading area with seating for 100 students",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Main%20Reading%20Hall",
+        category: "Facilities"
       },
       {
         title: "Computer Lab",
         description: "Modern lab with 30 workstations",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Computer%20Lab",
+        category: "Facilities"
       },
       {
         title: "Discussion Rooms",
         description: "Soundproof rooms for group study",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Discussion%20Rooms",
+        category: "Facilities"
       },
       {
         title: "Periodicals Section",
         description: "Area dedicated to journals and magazines",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Periodicals%20Section",
+        category: "Facilities"
       },
       {
         title: "Reference Section",
         description: "Collection of reference materials",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Reference%20Section",
+        category: "Facilities"
       },
       {
         title: "Digital Resource Center",
         description: "Access to online databases and e-resources",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Digital%20Resource%20Center",
+        category: "Facilities"
       },
-    ],
-    events: [
+      
+      // Events
       {
         title: "Book Exhibition 2023",
         description: "Annual exhibition featuring new acquisitions",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Book%20Exhibition",
+        category: "Events"
       },
       {
         title: "Author Talk Series",
         description: "Renowned authors sharing their experiences",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Author%20Talk",
+        category: "Events"
       },
       {
         title: "Library Week Celebration",
         description: "Various activities promoting reading culture",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Library%20Week",
+        category: "Events"
       },
       {
         title: "Research Workshop",
         description: "Training on research methodologies",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Research%20Workshop",
+        category: "Events"
       },
       {
         title: "Information Literacy Program",
         description: "Sessions on effective use of library resources",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Information%20Literacy",
+        category: "Events"
       },
       {
         title: "Book Club Meeting",
         description: "Monthly discussions on selected books",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Book%20Club",
+        category: "Events"
       },
-    ],
-    collections: [
+      
+      // Collections
       {
         title: "Rare Books Collection",
         description: "Valuable and historical books preserved in special conditions",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Rare%20Books",
+        category: "Collections"
       },
       {
         title: "Thesis Collection",
         description: "Research works by college alumni",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Thesis%20Collection",
+        category: "Collections"
       },
       {
         title: "Local History Collection",
         description: "Materials documenting local history and culture",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Local%20History",
+        category: "Collections"
       },
       {
         title: "Special Collections",
         description: "Donated collections from notable personalities",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Special%20Collections",
+        category: "Collections"
       },
       {
         title: "Multimedia Collection",
         description: "Audio-visual materials for educational purposes",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Multimedia",
+        category: "Collections"
       },
       {
         title: "Archive Collection",
         description: "Historical documents and records of the college",
         imageUrl: "/placeholder.svg?height=400&width=400&text=Archives",
-      },
-    ],
+        category: "Collections"
+      }
+    ]
   },
 
   // Books
@@ -1209,155 +691,34 @@ export const libraryData = {
   // ===================================================
   // Policies and strategic plans
   policy: {
-    vision:
-      "To be a leading academic library that empowers users with knowledge and information, fostering intellectual growth, critical thinking, and lifelong learning.",
-    mission:
-      "Our mission is to support the educational and research needs of our college community by providing access to diverse information resources, fostering information literacy, and creating an environment conducive to learning and knowledge creation.",
-    coreValues: [
-      {
-        name: "Access",
-        description: "We are committed to providing equitable access to information resources for all users.",
-      },
-      {
-        name: "Excellence",
-        description: "We strive for excellence in all our services and resources.",
-      },
-      {
-        name: "Innovation",
-        description: "We embrace new technologies and innovative approaches to enhance library services.",
-      },
-      {
-        name: "Collaboration",
-        description: "We work collaboratively with faculty, students, and other stakeholders.",
-      },
-      {
-        name: "Diversity",
-        description: "We value diversity of thought, perspective, and experience.",
-      },
-      {
-        name: "User-Centered",
-        description: "We prioritize the needs and experiences of our users in all decisions.",
-      },
+    vision:[
+      "To provide a student - centred learning environment that facilitats transference of information and to cater to the needs of its users to access it.",
+      "To provide well-equipped and functional physical spaces where students can pursue learning independently beyond the classroom.",
+      "To augment and maintain collections of the academic pursuits of the College.",
+      "To explore and implement innovative technologies and services to deliver information and scholarly resources, conveniently to the Users in the campus.",
     ],
-    policies: [
-      {
-        title: "Collection Development Policy",
-        subtitle: "Guidelines for building and maintaining the library collection",
-        sections: [
-          {
-            heading: "Selection Criteria",
-            content:
-              "Materials are selected based on relevance to curriculum, faculty recommendations, quality of content, cost, and format accessibility.",
-          },
-          {
-            heading: "Acquisition Process",
-            content:
-              "Requests for new materials can be submitted by faculty, staff, and students. The library committee reviews requests quarterly.",
-          },
-          {
-            heading: "Weeding and Deselection",
-            content:
-              "Materials that are outdated, damaged, or no longer relevant to the curriculum may be removed from the collection following established guidelines.",
-          },
-        ],
-      },
-      {
-        title: "Circulation Policy",
-        subtitle: "Rules for borrowing and returning library materials",
-        sections: [
-          {
-            heading: "Loan Periods",
-            content:
-              "Undergraduate students: 14 days, Postgraduate students: 21 days, Faculty: 30 days. Special collections may have different loan periods.",
-          },
-          {
-            heading: "Renewals",
-            content:
-              "Materials can be renewed once if there are no holds. Renewals can be done in person, by phone, or online through the library portal.",
-          },
-          {
-            heading: "Overdue Fines",
-            content:
-              "$0.50 per day per item, up to the replacement cost of the item. Borrowing privileges are suspended when fines exceed $10.",
-          },
-        ],
-      },
-      {
-        title: "Digital Resources Policy",
-        subtitle: "Guidelines for accessing and using electronic resources",
-        sections: [
-          {
-            heading: "Authorized Users",
-            content:
-              "Current students, faculty, and staff are authorized to access digital resources. Remote access is provided through institutional authentication.",
-          },
-          {
-            heading: "Acceptable Use",
-            content:
-              "Digital resources are for educational, research, and personal use only. Systematic downloading, distribution, or commercial use is prohibited.",
-          },
-          {
-            heading: "Copyright Compliance",
-            content:
-              "Users must comply with copyright laws and license agreements when using digital resources. Fair use principles apply.",
-          },
-        ],
-      },
+      
+    mission:[
+      "To develop reading habit in students.",
+      "To support classroom teaching.",
+      "To satisfy the information needs of the society.",
+      "To use modern tools, techniques for collection, storage and dissemination of information.",
+      "To access the user needs and accordingly provide necessary services.",
+
     ],
-    strategicPlan: [
-      {
-        year: "2023-2024",
-        goals: [
-          {
-            title: "Enhance Digital Infrastructure",
-            description: "Upgrade library management system and improve digital resource access.",
-          },
-          {
-            title: "Expand Information Literacy Program",
-            description: "Develop new workshops and online tutorials to improve student research skills.",
-          },
-          {
-            title: "Increase Collaboration with Faculty",
-            description: "Establish regular meetings with academic departments to better support curriculum needs.",
-          },
-        ],
-      },
-      {
-        year: "2024-2025",
-        goals: [
-          {
-            title: "Redesign Library Spaces",
-            description: "Create more collaborative and individual study spaces to meet diverse user needs.",
-          },
-          {
-            title: "Develop Special Collections",
-            description: "Build unique collections that support specialized research areas.",
-          },
-          {
-            title: "Implement Assessment Framework",
-            description: "Develop metrics to evaluate library services and their impact on student success.",
-          },
-        ],
-      },
-      {
-        year: "2025-2026",
-        goals: [
-          {
-            title: "Expand Digital Scholarship Services",
-            description: "Provide support for digital publishing, data management, and visualization.",
-          },
-          {
-            title: "Enhance Outreach Programs",
-            description: "Develop new initiatives to engage with the broader community.",
-          },
-          {
-            title: "Pursue External Funding",
-            description: "Identify and apply for grants to support library initiatives.",
-          },
-        ],
-      },
-    ],
-  },
+      
+    
+    objectives:
+      [
+      "To understand the research, teaching and learning needs of its users.",
+      "To build collections and create tools to support research, teaching and learning.",
+      "To provide access to and promote the discovery and use of local and external information resources.",
+      "T0o ensure the preservation of long-lasting availability of library collections and resources.",
+      "To bring our Library at par with the International Library Standard and to make it one of the best in the state of Tamilnadu.",
+      "To conduct Orientation classes to create awareness among students.",
+      "To encourage the User community to utilize E- resources, (E-journals, E-books, NPTEL videos) to its maximum to gain more knowledge of the recent developments in their respective fields.",
+      ],
+    },
 
   // Journals
   // ===================================================

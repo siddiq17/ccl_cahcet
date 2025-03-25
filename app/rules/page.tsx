@@ -10,17 +10,34 @@ export default function RulesPage() {
       </div>
 
       <Card>
+  <CardHeader>
+    <CardTitle>General Rules</CardTitle>
+    <CardDescription>Rules applicable to all library users</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <ul className="list-disc pl-5 space-y-2">
+      {libraryData.rules.general.map((rule, index) => (
+        <li key={`rule-${index}`}>{rule}</li> 
+      ))}
+    </ul>
+  </CardContent>
+</Card>
+
+
+      <Card>
         <CardHeader>
-          <CardTitle>General Rules</CardTitle>
-          <CardDescription>Rules applicable to all library users</CardDescription>
+          <CardTitle>Circulation Policy</CardTitle>
+          
         </CardHeader>
-        <CardContent>
-          <ul className="list-disc pl-5 space-y-2">
-            {libraryData.rules.general.map((rule, index) => (
-              <li key={index}>{rule}</li>
-            ))}
-          </ul>
-        </CardContent>
+       <CardContent>
+          <h1 className="list-disc pl-5 space-y-2"></h1>
+            
+            {libraryData.rules.circulationpolicy.map((rule, index) => (
+    <div key={index}>{rule}</div>
+))}
+
+       
+        </CardContent> 
       </Card>
 
       <Card>
@@ -39,34 +56,61 @@ export default function RulesPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Computer and Internet Usage</CardTitle>
-          <CardDescription>Rules for using library computers and internet</CardDescription>
+          <CardTitle>Return and Fine Policy</CardTitle>
+         
         </CardHeader>
         <CardContent>
           <ul className="list-disc pl-5 space-y-2">
-            {libraryData.rules.computerUsage.map((rule, index) => (
+            {libraryData.rules.finepolicy.map((rule, index) => (
+              <li key={index}>{rule}</li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
+      
+         
+       
+      <Card>
+        <CardHeader>
+          <CardTitle>SC/ST Book Bank Facility</CardTitle>
+         
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5 space-y-2">
+            {libraryData.rules.bookbank.map((rule, index) => (
+              <li key={index}>{rule}</li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Best Practice of the Library</CardTitle>
+         
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5 space-y-2">
+            {libraryData.rules.practice.map((rule, index) => (
+              <li key={index}>{rule}</li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>General Policy</CardTitle>
+         
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5 space-y-2">
+            {libraryData.rules.generalpolicy.map((rule, index) => (
               <li key={index}>{rule}</li>
             ))}
           </ul>
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Fines and Penalties</CardTitle>
-          <CardDescription>Consequences for rule violations</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            {libraryData.rules.fines.map((fine, index) => (
-              <div key={index} className="rounded-md border p-4">
-                <h3 className="font-medium">{fine.violation}</h3>
-                <p className="mt-2 text-sm">{fine.penalty}</p>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
+      
     </div>
   )
 }
