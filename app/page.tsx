@@ -15,7 +15,7 @@ export default function Home() {
 
   useEffect(() => {
     toast({
-      title: "Welcome to the Library Portal",
+      title: "Welcome to the CAHCET CENTRAL LIBRARARY",
       description: "Explore our vast collection of resources and services.",
     })
   }, [toast])
@@ -45,7 +45,7 @@ export default function Home() {
       >
         <div className="absolute inset-0 w-full h-full bg-[url('/cover-img.jpg')] bg-cover bg-center opacity-70" />
         <div className="relative z-10 max-w-xl">
-          <h1 className="text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl">Welcome to College Library</h1>
+          <h1 className="text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl">Welcome to CAHCET CENTRAL LIBRARY</h1>
           <p className="mt-4 text-black/90">
             Discover a world of knowledge with our comprehensive collection of books, journals, and digital resources.
           </p>
@@ -185,7 +185,7 @@ export default function Home() {
         >
           <Card className="h-full overflow-hidden border-none shadow-md">
             <div className="relative h-40">
-              <Image src="/placeholder.svg?height=400&width=600" alt="Library" fill className="object-cover" />
+              <Image src="/library-top.png" alt="Library" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                 <div className="p-4 text-white">
                   <h2 className="text-xl font-bold">Visit Our Library</h2>

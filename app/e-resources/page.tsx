@@ -12,16 +12,6 @@ export default function EResourcesPage() {
         <h1 className="text-3xl font-bold tracking-tight">E-Resources</h1>
         <p className="text-muted-foreground">Access digital resources and databases available through our library</p>
       </div>
-
-      <Alert>
-        <InfoIcon className="h-4 w-4" />
-        <AlertTitle>Important Information</AlertTitle>
-        <AlertDescription>
-          DELNET and N-LIST resources are IP-restricted and can only be accessed from the college network. For remote
-          access, please contact the library staff.
-        </AlertDescription>
-      </Alert>
-
       <div className="grid gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
@@ -30,7 +20,7 @@ export default function EResourcesPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <p>
-              DELNET provides access to a wide range of resources including books, journals, theses, and dissertations.
+              {libraryData.eResources.delnet.description}
               IP Range: {libraryData.eResources.delnet.ipRange}
             </p>
             <div className="flex items-center gap-4">
@@ -38,7 +28,6 @@ export default function EResourcesPage() {
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Access DELNET
               </Button>
-              <Button variant="outline">View Resources</Button>
             </div>
           </CardContent>
         </Card>
@@ -52,7 +41,7 @@ export default function EResourcesPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <p>
-              N-LIST provides access to e-journals, e-books, and research databases. IP Range:{" "}
+              {libraryData.eResources.nlist.description} IP Range:{" "}
               {libraryData.eResources.nlist.ipRange}
             </p>
             <div className="flex items-center gap-4">
@@ -60,46 +49,30 @@ export default function EResourcesPage() {
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Access N-LIST
               </Button>
-              <Button variant="outline">View Resources</Button>
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>E-Consortium (AUERC)</CardTitle>
+            <CardDescription>
+              Anna University E-Resources Consortium
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p>
+              {libraryData.eResources.consortium.description} IP Range:{" "}
+              {libraryData.eResources.consortium.ipRange}
+            </p>
+            <div className="flex items-center gap-4">
+              <Button>
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Access E-Consortium
+              </Button>
             </div>
           </CardContent>
         </Card>
       </div>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Other E-Resources</CardTitle>
-          <CardDescription>Additional digital resources available through our library</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {libraryData.eResources.other.map((resource, index) => (
-              <div key={index} className="rounded-lg border p-4">
-                <h3 className="font-medium">{resource.name}</h3>
-                <p className="mt-2 text-sm">{resource.description}</p>
-                <Button variant="link" className="mt-2 p-0">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Access
-                </Button>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>How to Access E-Resources</CardTitle>
-          <CardDescription>Step-by-step guide for accessing digital resources</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ol className="list-decimal pl-5 space-y-2">
-            {libraryData.eResources.accessInstructions.map((instruction, index) => (
-              <li key={index}>{instruction}</li>
-            ))}
-          </ol>
-        </CardContent>
-      </Card>
     </div>
   )
 }

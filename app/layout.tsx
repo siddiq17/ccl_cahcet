@@ -11,9 +11,8 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "College Library Management System",
-  description: "A comprehensive library management system for college",
-    generator: 'v0.dev'
+  title: "CAHCET CENTRAL LIBRARY",
+  description: "A comprehensive library Website of CCL"
 }
 
 export default function RootLayout({
