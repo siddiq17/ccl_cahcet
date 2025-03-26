@@ -16,91 +16,70 @@ export interface AcademicYear {
       department: "CSE",
       academicYears: [
         {
-          year: "2023-2024",
-          pdfLink: "https://example.com/cse-syllabus-2023-2024.pdf"
+          year: "2021",
+          pdfLink: "https://cac.annauniv.edu/aidetails/afug_2021_fu/Revised/IandC/B.E.CSE.pdf"
         },
-        {
-          year: "2022-2023",
-          pdfLink: "https://example.com/cse-syllabus-2022-2023.pdf"
-        }
+        
       ]
     },
     {
       department: "IT",
       academicYears: [
         {
-          year: "2023-2024",
-          pdfLink: "https://example.com/it-syllabus-2023-2024.pdf"
+          year: "2021",
+          pdfLink: "https://cac.annauniv.edu/aidetails/afug_2021_fu/Revised/IandC/B.Tech.IT.pdf"
         },
-        {
-          year: "2022-2023",
-          pdfLink: "https://example.com/it-syllabus-2022-2023.pdf"
-        }
+        
       ]
     },
     {
       department: "AIDS",
       academicYears: [
         {
-          year: "2023-2024",
-          pdfLink: "https://example.com/aids-syllabus-2023-2024.pdf"
+          year: "2021",
+          pdfLink: "https://cac.annauniv.edu/aidetails/afug_2021_fu/Revised/IandC/B.Tech.AIDS.pdf"
         },
-        {
-          year: "2022-2023",
-          pdfLink: "https://example.com/aids-syllabus-2022-2023.pdf"
-        }
+        
       ]
     },
     {
       department: "Civil",
       academicYears: [
         {
-          year: "2023-2024",
-          pdfLink: "https://example.com/civil-syllabus-2023-2024.pdf"
+          year: "2021",
+          pdfLink: "https://cac.annauniv.edu/aidetails/afug_2021_fu/Revised/Civil/BE.Civil.pdf"
         },
-        {
-          year: "2022-2023",
-          pdfLink: "https://example.com/civil-syllabus-2022-2023.pdf"
-        }
+        
       ]
     },
     {
       department: "Mechanical",
       academicYears: [
         {
-          year: "2023-2024",
-          pdfLink: "https://example.com/mechanical-syllabus-2023-2024.pdf"
+          year: "2021",
+          pdfLink: "https://cac.annauniv.edu/aidetails/afug_2021_fu/Revised/Mech/B.E.Mech.pdf"
         },
-        {
-          year: "2022-2023",
-          pdfLink: "https://example.com/mechanical-syllabus-2022-2023.pdf"
-        }
+        
       ]
     },
     {
       department: "ECE",
       academicYears: [
         {
-          year: "2023-2024",
-          pdfLink: "https://example.com/ece-syllabus-2023-2024.pdf"
+          year: "2021",
+          pdfLink: "https://cac.annauniv.edu/aidetails/afug_2021_fu/Revised/IandC/B.E.ECE.pdf"
         },
-        {
-          year: "2022-2023",
-          pdfLink: "https://example.com/ece-syllabus-2022-2023.pdf"
-        }
+        
       ]
     },
     {
       department: "EEE",
       academicYears: [
         {
-          year: "2023-2024",
-          pdfLink: "https://example.com/eee-syllabus-2023-2024.pdf"
+          year: "2021",
+          pdfLink: "https://cac.annauniv.edu/aidetails/afug_2021_fu/Revised/EEE/B.E.%20EEE.pdf"
         },
-        {
-          year: "2022-2023",
-          pdfLink: "https://example.com/eee-syllabus-2022-2023.pdf"
-        }
+       
       ]
     }
   ];
