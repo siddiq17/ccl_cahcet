@@ -25,19 +25,6 @@ export default function RulesPage() {
 
 
       <Card>
-        <CardHeader>
-          <CardTitle>Circulation Policy</CardTitle>
-          
-        </CardHeader>
-       <CardContent>
-          <h1 className="list-disc pl-5 space-y-2"></h1>
-            
-            {libraryData.rules.circulationpolicy.map((rule, index) => (
-    <div key={index}>{rule}</div>
-))}
-
-       
-        </CardContent> 
       </Card>
 
       <Card>
@@ -53,23 +40,7 @@ export default function RulesPage() {
           </ul>
         </CardContent>
       </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Return and Fine Policy</CardTitle>
-         
-        </CardHeader>
-        <CardContent>
-          <ul className="list-disc pl-5 space-y-2">
-            {libraryData.rules.finepolicy.map((rule, index) => (
-              <li key={index}>{rule}</li>
-            ))}
-          </ul>
-        </CardContent>
-      </Card>
-      
-         
-       
+          
       <Card>
         <CardHeader>
           <CardTitle>SC/ST Book Bank Facility</CardTitle>
@@ -95,22 +66,7 @@ export default function RulesPage() {
             ))}
           </ul>
         </CardContent>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>General Policy</CardTitle>
-         
-        </CardHeader>
-        <CardContent>
-          <ul className="list-disc pl-5 space-y-2">
-            {libraryData.rules.generalpolicy.map((rule, index) => (
-              <li key={index}>{rule}</li>
-            ))}
-          </ul>
-        </CardContent>
-      </Card>
-
-      
+      </Card>   
     </div>
   )
 }

@@ -42,6 +42,43 @@ export default function PolicyPage() {
                 </ul>
               </CardContent>
             </Card>
+            <Card>
+            <CardContent>
+            <CardHeader>
+          <CardTitle>Circulation Policy</CardTitle>
+        </CardHeader>
+          <h1 className="list-disc pl-5 space-y-2"></h1>
+            {libraryData.policy.circulationpolicy.map((rule, index) => (
+    <div key={index}>{rule}</div>
+))}
+        </CardContent> 
+        </Card>
+        <Card>
+        <CardHeader>
+          <CardTitle>General Policy</CardTitle>
+         
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5 space-y-2">
+            {libraryData.policy.generalpolicy.map((rule, index) => (
+              <li key={index}>{rule}</li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle lang="en">Return and Fine Policy</CardTitle>
+         
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc pl-5 space-y-2">
+            {libraryData.policy.finepolicy.map((rule, index) => (
+              <li key={index}>{rule}</li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
           </div>
         </TabsContent>
          

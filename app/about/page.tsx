@@ -15,7 +15,7 @@ export default function AboutPage() {
       <div className="grid gap-6 md:grid-cols-2">
         <Card className="md:col-span-2">
           <CardHeader>
-            <CardTitle>Our History</CardTitle>
+            <CardTitle>About Us</CardTitle>
             <CardDescription>The journey of our college library</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -29,25 +29,6 @@ export default function AboutPage() {
             <p>{libraryData.about.history}</p>
           </CardContent>
         </Card>
-
-        <Card>
-  <CardHeader>
-    <CardTitle>Functions/ Activities Of Library Committee</CardTitle>
-  </CardHeader>
-
-  <CardContent>
-    <ul className="list-disc pl-7 space-y-2">
-      {libraryData?.about?.activities?.length > 0 ? (
-        libraryData.about.activities.map((rule, index) => (
-          <li key={index}>{rule}</li>
-        ))
-      ) : (
-        <li>No activities found</li>
-      )}
-    </ul>
-  </CardContent>
-</Card>
-
        
       </div>
 

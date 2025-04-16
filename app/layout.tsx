@@ -2,12 +2,11 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+// import { ThemeProvider } from "@/components/theme-provider"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { LibrarySidebar } from "@/components/library-sidebar"
 import { TopMarquee } from "@/components/top-marquee"
 import { Toaster } from "@/components/ui/toaster"
-
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -23,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        {/* <ThemeProvider attribute="class" disableTransitionOnChange> */}
           <SidebarProvider>
             <div className="flex min-h-screen flex-col">
               <TopMarquee />
@@ -36,7 +35,7 @@ export default function RootLayout({
             </div>
           </SidebarProvider>
           <Toaster />
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   )
