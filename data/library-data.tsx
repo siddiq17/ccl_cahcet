@@ -115,30 +115,17 @@ export const libraryData = {
   // Latest news and announcements
   announcements: [
     {
-      title: "Library Timings Extended During Exams",
-      content: "The library will remain open until 10 PM during the examination period from May 15 to June 10.",
-      date: "May 5, 2023",
-    },
-    {
-      title: "New Database Subscription",
-      content: "We are pleased to announce that our library has subscribed to the JSTOR Arts & Sciences Collection.",
-      date: "April 20, 2023",
-    },
-    {
-      title: "Book Donation Drive",
-      content:
-        "Donate your gently used books to help expand our collection. Collection boxes are available at the library entrance.",
-      date: "March 15, 2023",
-    },
+      title: "Submission of Library Feedback",
+      content: "We request all students to submit their feedback regarding the library services and resources. Your input is valuable for improving our services.",
+      date: "April 16, 2025",
+    }
   ],
 
   // Library Hours
   // ===================================================
   // Operating hours
   hours: [
-    { day: "Monday - Friday", time: "8:00 AM - 8:00 PM" },
-    { day: "Saturday", time: "9:00 AM - 5:00 PM" },
-    { day: "Holidays", time: "10:00 AM - 2:00 PM" },
+    { day: "Monday - Friday", time: "9:00 AM - 4:30 PM" }
   ],
 
     // Committee Section
