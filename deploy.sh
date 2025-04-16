@@ -24,6 +24,7 @@ if curl -s http://localhost:3001 > /dev/null; then
 
   echo "Stopping and removing old container..."
   docker stop $APP_NAME
+  
   docker rm $APP_NAME
 
   echo "Starting new container on live port..."
